@@ -9,7 +9,6 @@ export const Login = ({ navigation }) => {
     const [textSenha, setTextSenha] = useState("");
 
     useEffect(() => {
-        console.log("fred");
         if (textUsuario !== "" && textSenha !== "") {
             setColorBoolean(false)
         } else {
