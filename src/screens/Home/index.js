@@ -1,171 +1,190 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, StatusBar } from 'react-native';
+import { Text, View, ScrollView, Image, StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { styles } from './styles';
 
+import eyeIcon from '../../assets/icons/olho/drawable-hdpi/outline_disabled_visible_black_20.png';
+import settingsIcon from '../../assets/icons/settings/drawable-hdpi/outline_settings_black_20.png';
+import phoneIcon from '../../assets/icons/phone/drawable-hdpi/outline_smartphone_black_18.png';
+import coin from '../../assets/icons/coin/drawable-hdpi/outline_monetization_on_black_18.png';
+import euro from '../../assets/icons/euro/drawable-hdpi/outline_euro_symbol_black_18.png';
+import umbrella from '../../assets/icons/umbrella/drawable-hdpi/outline_beach_access_black_18.png';
+import invest from '../../assets/icons/invest/drawable-hdpi/outline_trending_up_black_18.png';
+import wpp from '../../assets/icons/wpp/drawable-hdpi/outline_chat_bubble_outline_black_18.png';
+import card2 from '../../assets/icons/card2/drawable-hdpi/outline_credit_score_black_18.png';
+import pix from '../../assets/icons/pix/drawable-hdpi/outline_control_camera_black_18.png';
+import add from '../../assets/icons/add/drawable-hdpi/outline_person_add_alt_black_18.png';
+import pig from '../../assets/icons/pig/drawable-hdpi/outline_savings_black_18.png';
+import card from '../../assets/icons/card/drawable-hdpi/outline_credit_card_black_18.png';
+import phone2 from '../../assets/icons/phone2/drawable-hdpi/outline_mobile_friendly_black_18.png';
+import adjust from '../../assets/icons/adjust/drawable-hdpi/outline_tune_black_18.png';
+import lock from '../../assets/icons/lock/drawable-hdpi/outline_https_black_18.png';
+import falta from '../../assets/icons/falta/drawable-hdpi/outline_disabled_by_default_black_18.png';
+import help from '../../assets/icons/help/drawable-hdpi/outline_contact_support_black_18.png';
 
-export const Home = ({navigation}) => {
+export const Home = () => {
 
     return (
         <LinearGradient style={{ flex: 1 }} colors={["#820AD1", "#820AD1"]}>
             <StatusBar hidden={false} backgroundColor="#820AD1" />
-            <View style={{ flex: 1, paddingHorizontal: 5, justifyContent: 'space-around', alignItems: 'center' }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, width: '100%' }}>
-                    <Text style={{ paddingHorizontal: 15, fontSize: 25, color: 'white', fontWeight: 'bold', letterSpacing: 1 }}>Olá, Frederico </Text>
-                    <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>
-                        <View style={{ borderRadius: 100, backgroundColor: '#900AD1', color: 'white', width: 50, height: 50, marginRight: 10, justifyContent: 'center', paddingHorizontal: 10 }}>
-                            <Image style={{ tintColor: 'white' }} source={require('../../assets/icons/olho/drawable-hdpi/outline_disabled_visible_black_20.png')} />
+            <View style={styles.homeScreen}>
+                <View style={styles.header}>
+                    <Text style={styles.welcome}>Olá, Frederico </Text>
+                    <View style={styles.headerButtonsContainer}>
+                        <View style={styles.headerButtons}>
+                            <Image style={styles.headerButtonsImage} source={eyeIcon} />
                         </View>
-                        <View style={{ borderRadius: 100, backgroundColor: '#900AD1', color: 'white', width: 50, height: 50, marginRight: 10, justifyContent: 'center', paddingHorizontal: 10 }}>
-                            <Image style={{ tintColor: 'white' }} source={require('../../assets/icons/settings/drawable-hdpi/outline_settings_black_20.png')} />
+                        <View style={styles.headerButtons}>
+                            <Image style={styles.headerButtonsImage} source={settingsIcon} />
                         </View>
                     </View>
                 </View>
-                <ScrollView showsVerticalScrollIndicator={false} style={{ width: '100%' }}>
-                    <View style={{ backgroundColor: '#fff', height: 180, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/phone/drawable-hdpi/outline_smartphone_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Cartão de Crédito</Text>
+                <ScrollView showsVerticalScrollIndicator={false} style={styles.containerVertical}>
+                    <View style={styles.containerCartãoCrédito}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={phoneIcon} />
+                            <Text style={styles.titleText}>Cartão de Crédito</Text>
                         </View>
-                        <Text style={{ color: '#696969', fontSize: 15, paddingVertical: 5, letterSpacing: 0.5 }}>Fatura atual</Text>
-                        <Text style={{ color: '#1E90FF', fontSize: 30, fontWeight: 'bold', letterSpacing: 0.5 }}>R$ 1.000,00</Text>
+                        <Text style={styles.descriptionText}>Fatura atual</Text>
+                        <Text style={styles.creditoValue}>R$ 1.000,00</Text>
                         <View style={{ flexDirection: 'row' }}>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Limite disponível</Text>
-                            <Text style={{ color: 'green', fontSize: 15, fontWeight: 'bold', letterSpacing: 0.5 }}> R$ 5.000,00</Text>
+                            <Text style={styles.descriptionText}> Limite disponível</Text>
+                            <Text style={styles.limitValue}> R$ 5.000,00</Text>
                         </View>
                     </View>
-                    <View style={{ backgroundColor: '#fff', height: 160, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/coin/drawable-hdpi/outline_monetization_on_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Conta</Text>
+                    <View style={styles.containerConta}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={coin} />
+                            <Text style={styles.titleText}>Conta</Text>
                         </View>
-                        <Text style={{ color: '#696969', fontSize: 15, paddingVertical: 5, letterSpacing: 0.5 }}>Saldo Disponível</Text>
-                        <Text style={{ color: 'black', fontSize: 30, fontWeight: 'bold', letterSpacing: 0.5 }}>R$ 2.000,00</Text>
+                        <Text style={styles.descriptionText}>Saldo Disponível</Text>
+                        <Text style={styles.contaValue}>R$ 2.000,00</Text>
                     </View>
-                    <View style={{ backgroundColor: '#fff', height: 180, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/euro/drawable-hdpi/outline_euro_symbol_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Empréstimo</Text>
+                    <View style={styles.containerEmprestimo}>
+                        <View style={ styles.containerTitleTextIconImage }>
+                            <Image style={styles.IconImage} source={euro} />
+                            <Text style={styles.titleText}>Empréstimo</Text>
                         </View>
                         <View>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Valor disponível de até</Text>
-                            <Text style={{ color: 'black', fontSize: 15, fontWeight: 'bold', letterSpacing: 0.5 }}> R$ 10.000,00</Text>
+                            <Text style={styles.descriptionText}> Valor disponível de até</Text>
+                            <Text style={styles.emprestimoValue}> R$ 10.000,00</Text>
                         </View>
                         <View>
-                            <Text style={{ color: '#900AD1', borderWidth: 1, borderColor: '#900AD1', borderRadius: 5, padding: 10, letterSpacing: 0.5, fontWeight: 'bold' }}>SIMULAR EMPRÉSTIMO</Text>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: '#fff', height: 180, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/umbrella/drawable-hdpi/outline_beach_access_black_18.png')} />
-                            <Text style={{ color: '#900AD1', fontSize: 22, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Seguro de vida</Text>
-                        </View>
-                        <View>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Conheça Nubank Vida: um seguro</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> simples e que cabe no bolso.</Text>
-                        </View>
-                        <View>
-                            <Text style={{ color: '#900AD1', borderWidth: 1, borderColor: '#900AD1', borderRadius: 5, padding: 10, letterSpacing: 0.5, fontWeight: 'bold' }}>CONHECER</Text>
+                            <Text style={styles.buttom}>SIMULAR EMPRÉSTIMO</Text>
                         </View>
                     </View>
-                    <View style={{ backgroundColor: '#fff', height: 190, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/invest/drawable-hdpi/outline_trending_up_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Investimento Easynvest</Text>
+                    <View style={styles.containerVida}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={umbrella} />
+                            <Text style={styles.titleSpecial}>Seguro de vida</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.descriptionText}> Conheça Nubank Vida: um seguro</Text>
+                            <Text style={styles.descriptionText}> simples e que cabe no bolso.</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.buttom}>CONHECER</Text>
+                        </View>
+                    </View>
+                    <View style={styles.containerInvest}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={invest} />
+                            <Text style={styles.titleText}>Investimento Easynvest</Text>
+                        </View>
+                        <View style={{ paddingBottom: 10 }}>
+                            <Text style={styles.descriptionText}> Conheça Easynvest e invista com</Text>
+                            <Text style={styles.descriptionText}> taxa zero de corretagem e sem</Text>
+                            <Text style={styles.descriptionText}> burocracias!</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.buttom}>CONHECER</Text>
+                        </View>
+                    </View>
+                    <View style={styles.containerWpp}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={wpp} />
+                            <Text style={styles.titleText}>Pagamentos no WhatsApp</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.subTitle}> Envie e receba dinheiro sem sair</Text>
+                            <Text style={styles.subTitle}> da conversa</Text>
                         </View>
                         <View style={{ paddingBottom: 5 }}>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Conheça Easynvest e invista com</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> taxa zero de corretagem e sem</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> burocracias!</Text>
+                            <Text style={styles.descriptionText}> Os pagamentos no WhatsApp são</Text>
+                            <Text style={styles.descriptionText}> seguros, rápidos e sem tarifa. Tão</Text>
+                            <Text style={styles.descriptionText}> fácil quanto mandar uma foto de</Text>
+                            <Text style={styles.descriptionText}> "bom dia!" no grupo da familia.</Text>
                         </View>
                         <View>
-                            <Text style={{ color: '#900AD1', borderWidth: 1, borderColor: '#900AD1', borderRadius: 5, padding: 10, letterSpacing: 0.5, fontWeight: 'bold' }}>CONHECER</Text>
+                            <Text style={styles.buttom}>Quero conhecer</Text>
                         </View>
                     </View>
-                    <View style={{ backgroundColor: '#fff', height: 300, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/wpp/drawable-hdpi/outline_chat_bubble_outline_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Pagamentos no WhatsApp</Text>
+                    <View style={styles.containerPay}>
+                        <View style={styles.containerTitleTextIconImage}>
+                            <Image style={styles.IconImage} source={card2} />
+                            <Text style={styles.titleText}>Google Pay</Text>
                         </View>
                         <View>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5, fontWeight: 'bold' }}> Envie e receba dinheiro sem sair</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5, fontWeight: 'bold' }}> da conversa</Text>
-                        </View>
-                        <View style={{ paddingBottom: 5 }}>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Os pagamentos no WhatsApp são</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> seguros, rápidos e sem tarifa. Tão</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> fácil quanto mandar uma foto de</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> "bom dia!" no grupo da familia.</Text>
+                            <Text style={styles.descriptionText}> Use o Google Pay com seus cartões</Text>
+                            <Text style={styles.descriptionText}> Nubank</Text>
                         </View>
                         <View>
-                            <Text style={{ color: '#900AD1', borderWidth: 1, borderColor: '#900AD1', borderRadius: 5, padding: 10, letterSpacing: 0.5, fontWeight: 'bold' }}>Quero conhecer</Text>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: '#fff', height: 180, borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', margin: 10, padding: 20 }}>
-                        <View style={{ flexDirection: 'row', textAlignVertical: 'center' }}>
-                            <Image style={{ tintColor: '#696969' }} source={require('../../assets/icons/card2/drawable-hdpi/outline_credit_score_black_18.png')} />
-                            <Text style={{ color: '#696969', fontSize: 18, paddingLeft: 20, textAlignVertical: 'center', letterSpacing: 0.5 }}>Google Pay</Text>
-                        </View>
-                        <View>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Use o Google Pay com seus cartões</Text>
-                            <Text style={{ color: 'black', fontSize: 15, letterSpacing: 0.5 }}> Nubank</Text>
-                        </View>
-                        <View>
-                            <Text style={{ color: '#900AD1', borderWidth: 1, borderColor: '#900AD1', borderRadius: 5, padding: 10, letterSpacing: 0.5, fontWeight: 'bold' }}>REGISTRAR MEU CARTÃO</Text>
+                            <Text style={styles.buttom}>REGISTRAR MEU CARTÃO</Text>
                         </View>
                     </View>
                 </ScrollView>
-                <ScrollView style={{ flexDirection: 'row', height: 180, paddingBottom: 10, paddingTop: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/pix/drawable-hdpi/outline_control_camera_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Pix</Text>
+                <ScrollView style={styles.containerHorizontal} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={pix} />
+                        <Text style={styles.smallText}>Pix</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/card2/drawable-hdpi/outline_credit_score_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Pagar</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={card2} />
+                        <Text style={styles.smallText}>Pagar</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7 }} source={require('../../assets/icons/add/drawable-hdpi/outline_person_add_alt_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Indicar amigos</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={add} />
+                        <Text style={styles.smallText}>Indicar amigos</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/euro/drawable-hdpi/outline_euro_symbol_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Transferir</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={euro} />
+                        <Text style={styles.smallText}>Transferir</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/pig/drawable-hdpi/outline_savings_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Depositar</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={pig} />
+                        <Text style={styles.smallText}>Depositar</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/euro/drawable-hdpi/outline_euro_symbol_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 12, padding: 7 }}>Empréstimos</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={euro} />
+                        <Text style={[styles.smallText, {fontSize:13}]}>Empréstimos</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/card/drawable-hdpi/outline_credit_card_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Cartão virtual</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={card} />
+                        <Text style={styles.smallText}>Cartão virtual</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/phone2/drawable-hdpi/outline_mobile_friendly_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Recarga celular</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={phone2} />
+                        <Text style={styles.smallText}>Recarga celular</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/adjust/drawable-hdpi/outline_tune_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Ajustar limite</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={adjust} />
+                        <Text style={styles.smallText}>Ajustar limite</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/lock/drawable-hdpi/outline_https_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Bloquear cartão</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={lock} />
+                        <Text style={styles.smallText}>Bloquear cartão</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/falta/drawable-hdpi/outline_disabled_by_default_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Cobrar</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={falta} />
+                        <Text style={styles.smallText}>Cobrar</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7  }} source={require('../../assets/icons/euro/drawable-hdpi/outline_euro_symbol_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Doação</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={euro} />
+                        <Text style={styles.smallText}>Doação</Text>
                     </View>
-                    <View style={{ flex: 1, width: 95, backgroundColor: '#900AD1', borderRadius: 3, justifyContent: 'space-between', alignItems: 'flex-start', marginVertical: 10, marginLeft: 10 }}>
-                        <Image style={{ tintColor: 'white', margin: 7 }} source={require('../../assets/icons/help/drawable-hdpi/outline_contact_support_black_18.png')} />
-                        <Text style={{ color: '#e5e5e5e5', fontSize: 15, padding: 7 }}>Me ajuda</Text>
+                    <View style={styles.smallContainers}>
+                        <Image style={styles.smallImage} source={help} />
+                        <Text style={styles.smallText}>Me ajuda</Text>
                     </View>
                 </ScrollView>
             </View>
@@ -173,8 +192,5 @@ export const Home = ({navigation}) => {
     )
 }
 
-const styles = StyleSheet.create({
-    textOla: {
-        backgroundColor: 'red'
-    }
-})
+
+
